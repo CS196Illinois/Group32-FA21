@@ -1,6 +1,8 @@
 package com.cs196.midcard;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -8,11 +10,14 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
+	Music introMusic;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+		introMusic = Gdx.audio.newMusic(Gdx.files.internal("Intromusic.mp3"));
+		introMusic.play();
 	}
 
 	@Override
@@ -27,5 +32,6 @@ public class Game extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
+		introMusic.dispose();
 	}
 }
