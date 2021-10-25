@@ -9,10 +9,17 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
 	Music introMusic;
-	
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
+
+		/*  The music used below is Adventure by Alexander Nakarada
+		| https://www.serpentsoundstudios.com
+		Music promoted by https://www.chosic.com/free-music/all/
+		Attribution 4.0 International (CC BY 4.0)
+		https://creativecommons.org/licenses/by/4.0/ */
+
 		introMusic = Gdx.audio.newMusic(Gdx.files.internal("music/Intromusic.mp3"));
 		introMusic.play();
 	}
