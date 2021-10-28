@@ -145,7 +145,4 @@ public class Card {
     public void setPrevMoveUsed(int prevMoveUsed) {
         this.prevMoveUsed = prevMoveUsed;
     }
-
-
-
 }

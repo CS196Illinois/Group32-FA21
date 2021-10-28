@@ -1,10 +1,9 @@
 package com.cs196.midcard;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 
-public class Map extends ApplicationAdapter{
+public class Map {
 	private Texture battleBackground1;
 	private Texture battleBackground2;
 	private Texture battleBackground3;
