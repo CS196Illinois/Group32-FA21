@@ -8,11 +8,14 @@ public class Map {
 	private Texture backgroundMap;
 
 	public Map(String mapName) {
+		if (mapName.equals("LevelMap")) {
+			backgroundMap = new Texture(Gdx.files.internal(mapName + ".jpg"));
+		}
 		backgroundMap = new Texture(Gdx.files.internal(mapName + "/" + 
 		"Bright" + "/" + mapName + ".png"));
 	}
-	public void renderBackground(SpriteBatch batch, 
-	float WORLD_WIDTH, float WORLD_HEIGHT) {
+
+	public void renderBackground(SpriteBatch batch, float WORLD_WIDTH, float WORLD_HEIGHT) {
 		batch.draw(backgroundMap, -(WORLD_WIDTH/2), -(WORLD_HEIGHT/2), WORLD_WIDTH, WORLD_HEIGHT);
 	}
 }
