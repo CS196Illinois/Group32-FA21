@@ -1,5 +1,6 @@
 package com.cs196.midcard;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Battle {
@@ -25,7 +26,7 @@ public class Battle {
         if (entity.getType() == 1) {
             if (m.getType() == 0) {
                 return m.getDamage();
-            } else if (m.getType() == 1 || m.getType() == 2) {
+            } else if (m.getType() == 1 || m.getType() == 3) {
                 return m.getDamage() / 2;
             } else {
                 return m.getDamage() * 2;
@@ -36,7 +37,7 @@ public class Battle {
     }
 
     public void updateHp(Entity entity, Move m) {
-        entity.setHp(boss.getHp() - calculateDamage(entity, m));
+        entity.setHp(entity.getHp() - calculateDamage(entity, m));
     }
 
     public boolean gameOver() {
@@ -57,30 +58,76 @@ public class Battle {
         int moveInput = 0;
         Entity character = b.getEntity();
         Entity boss = b.getBoss();
+        Random rand = new Random();
+        int randomNum = rand.nextInt(6) + 1;
+        System.out.println(randomNum);
 
         System.out.println("Game Start\n\n");
 
         while (b.gameOver()) {
-            System.out.println("Your HP: " + character.getHp() + "\nYour Skills: " + character.getM1().getName() + " " +
-                    character.getM2().getName() + " " + character.getM3().getName() + " " + character.getM4().getName() + " " +
-                    character.getM5().getName() + " " + character.getM6().getName());
+            System.out.println("Your HP: " + character.getHp() + "\nYour Skills: " + character.getM1().getName() + ", " +
+                    character.getM2().getName() + ", " + character.getM3().getName() + ", " + character.getM4().getName() + ", " +
+                    character.getM5().getName() + ", " + character.getM6().getName());
             System.out.println("Boss HP: " + boss.getHp());
             System.out.println("\nChoose Your Move.");
             moveInput = sc.nextInt();
             switch (moveInput) {
                 case 1: b.updateHp(boss, character.getM1());
+                    System.out.println("You used " + character.getBM1().getName() + "!");
+                    System.out.println("You dealt " + character.getBM1().getDamage() + " amount of damage!");
                     break;
                 case 2: b.updateHp(boss, character.getM2());
+                    System.out.println("You used " + character.getBM1().getName() + "!");
+                    System.out.println("You dealt " + character.getBM1().getDamage() + " amount of damage!");
                     break;
                 case 3: b.updateHp(boss, character.getM3());
+                    System.out.println("You used " + character.getBM1().getName() + "!");
+                    System.out.println("You dealt " + character.getBM1().getDamage() + " amount of damage!");
                     break;
                 case 4: b.updateHp(boss, character.getM4());
+                    System.out.println("You used " + character.getBM1().getName() + "!");
+                    System.out.println("You dealt " + character.getBM1().getDamage() + " amount of damage!");
                     break;
                 case 5: b.updateHp(boss, character.getM5());
+                    System.out.println("You used " + character.getBM1().getName() + "!");
+                    System.out.println("You dealt " + character.getBM1().getDamage() + " amount of damage!");
                     break;
                 case 6: b.updateHp(boss, character.getM6());
+                    System.out.println("You used " + character.getBM1().getName() + "!");
+                    System.out.println("You dealt " + character.getBM1().getDamage() + " amount of damage!");
                     break;
             }
+
+            System.out.println("\n");
+
+            switch (randomNum) {
+                case 1: b.updateHp(character, boss.getBM1());
+                    System.out.println("The enemy used " + boss.getBM1().getName() + "!");
+                    System.out.println("The enemy dealt " + boss.getBM1().getDamage() + " amount of damage!");
+                    break;
+                case 2: b.updateHp(character, boss.getBM2());
+                    System.out.println("The enemy used " + boss.getBM1().getName() + "!");
+                    System.out.println("The enemy dealt " + boss.getBM2().getDamage() + " amount of damage!");
+                    break;
+                case 3: b.updateHp(character, boss.getBM3());
+                    System.out.println("The enemy used " + boss.getBM1().getName() + "!");
+                    System.out.println("The enemy dealt " + boss.getBM3().getDamage() + " amount of damage!");
+                    break;
+                case 4: b.updateHp(character, boss.getBM4());
+                    System.out.println("The enemy used " + boss.getBM1().getName() + "!");
+                    System.out.println("The enemy dealt " + boss.getBM4().getDamage() + " amount of damage!");
+                    break;
+                case 5: b.updateHp(character, boss.getBM5());
+                    System.out.println("The enemy used " + boss.getBM1().getName() + "!");
+                    System.out.println("The enemy dealt " + boss.getBM5().getDamage() + " amount of damage!");
+                    break;
+                case 6: b.updateHp(character, boss.getBM6());
+                    System.out.println("The enemy used " + boss.getBM1().getName() + "!");
+                    System.out.println("The enemy dealt " + boss.getBM6().getDamage() + " amount of damage!");
+                    break;
+            }
+
+            System.out.println("\n");
 
         }
     }
