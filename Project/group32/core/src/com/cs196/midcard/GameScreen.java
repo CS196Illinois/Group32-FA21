@@ -19,14 +19,14 @@ public class GameScreen implements Screen {
     private SpriteBatch batch;
     private Texture characterTexture;
     
-    private static final int WORLD_WIDTH = 800;
+    private static final int WORLD_WIDTH = 600;
     private static final int WORLD_HEIGHT = 600;
 
     public GameScreen() {
         camera = new OrthographicCamera();
         viewport = new StretchViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
         batch = new SpriteBatch();
-        map = new Map("Battleground1");
+        map = new Map("Battleground2");
         characterTexture = new Texture("mainCharacter.png");
         player = new Player(characterTexture);
     }
@@ -34,10 +34,11 @@ public class GameScreen implements Screen {
     @Override
     public void render(float deltaTime) {
         batch.begin();
-        resize(WORLD_WIDTH, WORLD_HEIGHT);
+        camera.translate((WORLD_WIDTH), (WORLD_HEIGHT), 0);
         map.renderBackground(batch, WORLD_WIDTH, WORLD_HEIGHT);
         player.draw(batch);
         player.detectInput();
+        //player.checkInMap();
         batch.end();
     }
     @Override
@@ -45,7 +46,7 @@ public class GameScreen implements Screen {
         
     }
     @Override
-    public void resume() {
+    public void resume() { 
         
     }
     @Override

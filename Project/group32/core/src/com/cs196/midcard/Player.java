@@ -14,16 +14,16 @@ import com.badlogic.gdx.Input.Keys;
 public class Player {
 
     //define the ScreenWidth and ScreenHeight
-    public static final int ScreenWidth = 800;
-    public static final int ScreenHeight = 480;
+    public static final int ScreenWidth = 300;
+    public static final int ScreenHeight = 300;
     //define the Constant for the player's speed
-    public static final int PlayerSpeed = 10;
+    public static final int PlayerSpeed = 5;
     //define the Constant for the player's size
-    public static final int PlayerHeight = 36;
-    public static final int PlayerWidth = 16;
+    public static final int PlayerHeight = 100;
+    public static final int PlayerWidth = 100;
     //define the Constant for the player's position
-    public static final int PlayerInitialPositionX = -(ScreenWidth / 2);
-    public static final int PlayerInitialPositionY = -(ScreenHeight / 2);
+    public static final int PlayerInitialPositionX = -PlayerHeight/2;
+    public static final int PlayerInitialPositionY = -PlayerWidth/2;
 
     private Texture character;
     private Rectangle characterRec = new Rectangle();
@@ -32,8 +32,8 @@ public class Player {
         this.character = character;
         characterRec.x = PlayerInitialPositionX;
         characterRec.y = PlayerInitialPositionY;
-        characterRec.width = PlayerHeight * 10;
-        characterRec.height = PlayerWidth * 10;
+        characterRec.width = PlayerHeight;
+        characterRec.height = PlayerWidth;
     }
 
     public void detectInput() {
@@ -50,5 +50,19 @@ public class Player {
     public void draw(SpriteBatch batch) {
         batch.draw(character, characterRec.x, characterRec.y,
         characterRec.width, characterRec.height);
+    }
+    public void checkInMap() { 
+        // check in x axis
+        if (characterRec.x >= ScreenWidth - PlayerWidth) {
+            characterRec.x = ScreenWidth;
+        } else if (characterRec.x < -ScreenWidth) {
+            characterRec.x = -ScreenWidth;
+        }
+        // check in y axis
+        if (characterRec.y >= ScreenHeight - PlayerHeight) {
+            characterRec.y = ScreenHeight;
+        } else if (characterRec.y < -ScreenHeight) {
+            characterRec.y = -ScreenHeight;
+        }
     }
 }
