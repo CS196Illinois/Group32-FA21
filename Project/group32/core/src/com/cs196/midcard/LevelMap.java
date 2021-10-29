@@ -10,8 +10,11 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class LevelMap {
     private Texture levelMap;
+    private Texture mainCharacter;
 
     public void create() {
         levelMap = new Texture(Gdx.files.internal("Level Map.jpg"));
+        mainCharacter = new Texture(Gdx.files.internal("mainCharacter.png"));
+
     }
 }
