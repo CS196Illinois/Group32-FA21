@@ -53,14 +53,14 @@ public class Player {
     }
     public void checkInMap() { 
         // check in x axis
-        if (characterRec.x >= ScreenWidth - PlayerWidth) {
-            characterRec.x = ScreenWidth;
+        if (characterRec.x > ScreenWidth - PlayerWidth) {
+            characterRec.x = ScreenWidth - PlayerWidth;
         } else if (characterRec.x < -ScreenWidth) {
             characterRec.x = -ScreenWidth;
         }
         // check in y axis
-        if (characterRec.y >= ScreenHeight - PlayerHeight) {
-            characterRec.y = ScreenHeight;
+        if (characterRec.y > ScreenHeight - PlayerHeight) {
+            characterRec.y = ScreenHeight - PlayerHeight;
         } else if (characterRec.y < -ScreenHeight) {
             characterRec.y = -ScreenHeight;
         }

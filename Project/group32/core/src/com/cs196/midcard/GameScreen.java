@@ -38,7 +38,7 @@ public class GameScreen implements Screen {
         map.renderBackground(batch, WORLD_WIDTH, WORLD_HEIGHT);
         player.draw(batch);
         player.detectInput();
-        //player.checkInMap();
+        player.checkInMap();
         batch.end();
     }
     @Override
