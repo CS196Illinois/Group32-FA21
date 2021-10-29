@@ -4,6 +4,8 @@ public class Card {
 
     private Move m1, m2;
     private String name;
+    private int prevMoveUsed;
+    private int moveUsed;
 
     public Card(String name, Move m1, Move m2) {
         this.name = name;
@@ -23,4 +25,11 @@ public class Card {
         return m2;
     }
 
+    public void setMoveUsed(int moveUsed) {
+        this.moveUsed = moveUsed;
+    }
+
+    public void setPrevMoveUsed(int prevMoveUsed) {
+        this.prevMoveUsed = prevMoveUsed;
+    }
 }
