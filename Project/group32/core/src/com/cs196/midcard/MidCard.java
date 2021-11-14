@@ -6,9 +6,9 @@ import com.badlogic.gdx.audio.Music;
 
 public class MidCard extends Game {
 
-	GameScreen gameScreen;
-	MapScreen mapScreen;
-	Music introMusic;
+	public GameScreen gameScreen;
+	public MapScreen mapScreen;
+	public Music introMusic;
 	
 	@Override
 	public void create () {

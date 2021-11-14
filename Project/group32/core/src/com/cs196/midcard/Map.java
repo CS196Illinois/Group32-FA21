@@ -10,9 +10,9 @@ public class Map {
 	public Map(String mapName) {
 		if (mapName.equals("LevelMap")) {
 			backgroundMap = new Texture(Gdx.files.internal(mapName + ".jpg"));
+		} else {
+			backgroundMap = new Texture(Gdx.files.internal(mapName + "/" + "Bright" + "/" + mapName + ".png"));
 		}
-		backgroundMap = new Texture(Gdx.files.internal(mapName + "/" + 
-		"Bright" + "/" + mapName + ".png"));
 	}
 
 	public void renderBackground(SpriteBatch batch, float WORLD_WIDTH, float WORLD_HEIGHT) {

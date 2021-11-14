@@ -19,7 +19,7 @@ public class MapScreen implements Screen {
     private SpriteBatch batch;
     private Texture characterTexture;
 
-    private static final int WORLD_WIDTH = 800;
+    private static final int WORLD_WIDTH = 1000;
     private static final int WORLD_HEIGHT = 600;
 
     public MapScreen() {
@@ -64,5 +64,13 @@ public class MapScreen implements Screen {
     @Override
     public void dispose() {
         batch.dispose();
+    }
+
+    public int getWidth() {
+        return WORLD_WIDTH;
+    }
+
+    public int getHeight() {
+        return WORLD_HEIGHT;
     }
 }
