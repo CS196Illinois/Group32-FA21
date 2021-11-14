@@ -13,7 +13,7 @@ import com.badlogic.gdx.utils.Array;
 
 public class LevelMap extends ApplicationAdapter {
 
-    private static final int WORLD_WIDTH = 800;
+    private static final int WORLD_WIDTH = 1000;
     private static final int WORLD_HEIGHT = 600;
 
     private Map map;

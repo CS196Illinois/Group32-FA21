@@ -1,5 +1,7 @@
 com/cs196/midcard/Battle.java
  com.cs196.midcard.Battle
+com/cs196/midcard/MapScreen.java
+ com.cs196.midcard.MapScreen
 com/cs196/midcard/MidCard.java
  com.cs196.midcard.MidCard
 com/cs196/midcard/Entity.java

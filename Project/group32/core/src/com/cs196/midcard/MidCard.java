@@ -6,13 +6,18 @@ import com.badlogic.gdx.audio.Music;
 
 public class MidCard extends Game {
 
-	GameScreen gameScreen;
-	Music introMusic;
+	public GameScreen gameScreen;
+	public MapScreen mapScreen;
+	public Music introMusic;
 	
 	@Override
 	public void create () {
+
+		mapScreen = new MapScreen();
 		gameScreen = new GameScreen();
-		setScreen(gameScreen);
+
+		setScreen(mapScreen);
+
 		/*  The music used below is Adventure by Alexander Nakarada
 		| https://www.serpentsoundstudios.com
 		Music promoted by https://www.chosic.com/free-music/all/
@@ -23,17 +28,20 @@ public class MidCard extends Game {
 
 	@Override
 	public void render () {
-		gameScreen.render(Gdx.graphics.getDeltaTime());
+		mapScreen.render(Gdx.graphics.getDeltaTime());
+		//gameScreen.render(Gdx.graphics.getDeltaTime());
 		introMusic.play();
 		introMusic.setLooping(true);
 	}
 	
 	@Override
 	public void dispose () {
-		gameScreen.dispose();
+		mapScreen.dispose();
+		// gameScreen.dispose();
 	}
 	@Override
 	public void resize(int width, int height) {
-		gameScreen.resize(width, height);
+		mapScreen.resize(width, height);
+		// gameScreen.resize(width, height);
 	}
 }
