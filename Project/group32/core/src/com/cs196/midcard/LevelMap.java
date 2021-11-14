@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.Array;
 
 public class LevelMap extends ApplicationAdapter {
 
@@ -22,6 +23,7 @@ public class LevelMap extends ApplicationAdapter {
     private Music music;
     private SpriteBatch batch;
     private OrthographicCamera camera;
+    private Array<Rectangle> levelRects;
 
     @Override
     public void create() {
@@ -49,6 +51,9 @@ public class LevelMap extends ApplicationAdapter {
         rectChar.y = 20;
         rectChar.width = 64;
         rectChar.height = 64;
+
+        // create level map rectangles
+        // levelRects = { the 8 positions };
     }
 
     @Override
