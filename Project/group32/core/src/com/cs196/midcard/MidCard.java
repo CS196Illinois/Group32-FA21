@@ -16,7 +16,7 @@ public class MidCard extends Game {
 		mapScreen = new MapScreen();
 		gameScreen = new GameScreen();
 
-		setScreen(mapScreen);
+		setScreen(gameScreen);
 
 		/*  The music used below is Adventure by Alexander Nakarada
 		| https://www.serpentsoundstudios.com
@@ -28,7 +28,7 @@ public class MidCard extends Game {
 
 	@Override
 	public void render () {
-		mapScreen.render(Gdx.graphics.getDeltaTime());
+		gameScreen.render(Gdx.graphics.getDeltaTime());
 		//gameScreen.render(Gdx.graphics.getDeltaTime());
 		introMusic.play();
 		introMusic.setLooping(true);
@@ -36,12 +36,12 @@ public class MidCard extends Game {
 	
 	@Override
 	public void dispose () {
-		mapScreen.dispose();
+		gameScreen.dispose();
 		// gameScreen.dispose();
 	}
 	@Override
 	public void resize(int width, int height) {
-		mapScreen.resize(width, height);
+		gameScreen.resize(width, height);
 		// gameScreen.resize(width, height);
 	}
 }
