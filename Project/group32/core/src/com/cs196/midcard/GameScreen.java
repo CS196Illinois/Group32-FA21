@@ -17,10 +17,21 @@ public class GameScreen implements Screen {
     private Viewport viewport;
 
     private SpriteBatch batch;
+
     private Texture characterTexture;
+    private Texture cardOneTexture;
+    private Texture cardTwoTexture;
+
+    private Card cardOne;
+    private Card cardTwo;
     
+<<<<<<< HEAD
     private static final int WORLD_WIDTH = 1920;
     private static final int WORLD_HEIGHT = 1080;
+=======
+    private static final int WORLD_WIDTH = 1000;
+    private static final int WORLD_HEIGHT = 600;
+>>>>>>> 908b69e9423cc201af28812eebab3feefd303f1d
 
     public GameScreen() {
         camera = new OrthographicCamera();
@@ -29,6 +40,10 @@ public class GameScreen implements Screen {
         map = new Map("Battleground2");
         characterTexture = new Texture("mainCharacter.png");
         player = new Player(characterTexture);
+        cardOneTexture = new Texture("Fire 1.jpg");
+        cardTwoTexture = new Texture("Fire 2.jpg");
+        cardOne = new Card("fire1", cardOneTexture, -300, -250);
+        cardTwo = new Card("fire2", cardTwoTexture, -200, -250);
     }
     
     @Override
@@ -39,6 +54,8 @@ public class GameScreen implements Screen {
         player.draw(batch);
         player.detectInput();
         player.checkInMap();
+        cardOne.draw(batch);
+        cardTwo.draw(batch);
         batch.end();
     }
     @Override
