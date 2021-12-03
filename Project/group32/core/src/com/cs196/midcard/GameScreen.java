@@ -19,8 +19,8 @@ public class GameScreen implements Screen {
     private SpriteBatch batch;
     private Texture characterTexture;
     
-    private static final int WORLD_WIDTH = 600;
-    private static final int WORLD_HEIGHT = 600;
+    private static final int WORLD_WIDTH = 1920;
+    private static final int WORLD_HEIGHT = 1080;
 
     public GameScreen() {
         camera = new OrthographicCamera();

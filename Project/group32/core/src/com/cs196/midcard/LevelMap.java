@@ -13,8 +13,8 @@ import com.badlogic.gdx.utils.Array;
 
 public class LevelMap extends ApplicationAdapter {
 
-    private static final int WORLD_WIDTH = 1000;
-    private static final int WORLD_HEIGHT = 600;
+    private static final int WORLD_WIDTH = 1920;
+    private static final int WORLD_HEIGHT = 1080;
 
     private Map map;
     private Texture levelMap;
@@ -29,7 +29,7 @@ public class LevelMap extends ApplicationAdapter {
     public void create() {
         // load level map
         // levelMap = new Texture(Gdx.files.internal("Level Map.jpg"));
-        map = new Map("LevelMap");
+        // map = new Map("LevelMap");
         //  <- USE FOR render() !!!!!!!
 
         // load character
