@@ -28,12 +28,12 @@ public class Player {
     private Texture character;
     private Rectangle characterRec = new Rectangle();
     
-    public Player(Texture character) {
+    public Player(Texture character, int one, int two, int playerWidth, int playerHeight) {
         this.character = character;
-        characterRec.x = PlayerInitialPositionX;
-        characterRec.y = PlayerInitialPositionY;
-        characterRec.width = PlayerHeight;
-        characterRec.height = PlayerWidth;
+        characterRec.x = one;
+        characterRec.y = two;
+        characterRec.width = playerWidth;
+        characterRec.height = playerHeight;
     }
 
     public void detectInput() {

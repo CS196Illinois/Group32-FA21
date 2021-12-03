@@ -8,12 +8,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import org.w3c.dom.Text;
 
 public class GameScreen implements Screen {
 
     private Game game;
     private Map map;
     private Player player;
+    private Player enemy;
 
     private Camera camera;
     private Viewport viewport;
@@ -23,6 +25,7 @@ public class GameScreen implements Screen {
     private Texture characterTexture;
     private Texture cardOneTexture;
     private Texture cardTwoTexture;
+    private Texture enemyTexture;
 
     private Card cardOne;
     private Card cardTwo;
@@ -37,11 +40,13 @@ public class GameScreen implements Screen {
         batch = new SpriteBatch();
         map = new Map("Battleground2");
         characterTexture = new Texture("mainCharacter.png");
-        player = new Player(characterTexture);
+        enemyTexture = new Texture("Enemy/1.png");
+        enemy = new Player(enemyTexture, -800, -300, 500, 500);
+        player = new Player(characterTexture, -50, -350, 100, 100);
         cardOneTexture = new Texture("Fire 1.jpg");
         cardTwoTexture = new Texture("Fire 2.jpg");
-        cardOne = new Card("fire1", cardOneTexture, -300, -250);
-        cardTwo = new Card("fire2", cardTwoTexture, -200, -250);
+        cardOne = new Card("fire1", cardOneTexture, 300, -500);
+        cardTwo = new Card("fire2", cardTwoTexture, 450, -500);
     }
     
     @Override
@@ -50,6 +55,7 @@ public class GameScreen implements Screen {
         camera.translate((WORLD_WIDTH), (WORLD_HEIGHT), 0);
         map.renderBackground(batch, WORLD_WIDTH, WORLD_HEIGHT);
         player.draw(batch);
+        enemy.draw(batch);
         player.detectInput();
         player.checkInMap();
         cardOne.draw(batch);

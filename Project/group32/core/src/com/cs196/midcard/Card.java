@@ -22,8 +22,8 @@ public class Card {
         this.card = card;
         cardRec.x = xPos;
         cardRec.y = yPos;
-        cardRec.width = 68;
-        cardRec.height = 120;
+        cardRec.width = 136;
+        cardRec.height = 240;
     }
 
     public void draw(SpriteBatch batch) {

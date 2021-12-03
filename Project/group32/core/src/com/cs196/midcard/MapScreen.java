@@ -33,7 +33,7 @@ public class MapScreen implements Screen {
         batch = new SpriteBatch();
         map = new Map("LevelMap");
         characterTexture = new Texture("mainCharacter.png");
-        player = new Player(characterTexture);
+        player = new Player(characterTexture, 400, -500, 100, 100);
     }
 
     public void render(float deltaTime) {

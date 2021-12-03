@@ -1,9 +1,9 @@
 com/cs196/midcard/Battle.java
  com.cs196.midcard.Battle
-com/cs196/midcard/MapScreen.java
- com.cs196.midcard.MapScreen
 com/cs196/midcard/Move.java
  com.cs196.midcard.Move
+com/cs196/midcard/MidCard.java
+ com.cs196.midcard.MidCard
 com/cs196/midcard/Entity.java
  com.cs196.midcard.Entity
 com/cs196/midcard/Card.java
@@ -14,7 +14,7 @@ com/cs196/midcard/LevelMap.java
  com.cs196.midcard.LevelMap
 com/cs196/midcard/Player.java
  com.cs196.midcard.Player
+com/cs196/midcard/MapScreen.java
+ com.cs196.midcard.MapScreen
 com/cs196/midcard/GameScreen.java
  com.cs196.midcard.GameScreen
-com/cs196/midcard/MidCard.java
- com.cs196.midcard.MidCard
