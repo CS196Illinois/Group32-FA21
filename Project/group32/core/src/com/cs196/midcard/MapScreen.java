@@ -43,6 +43,9 @@ public class MapScreen implements Screen {
         player.draw(batch);
         player.detectInput();
         player.checkInMap();
+        if (player.getY() == -400) {
+            game.setScreen(new GameScreen(game));
+        }
         batch.end();
     }
     @Override

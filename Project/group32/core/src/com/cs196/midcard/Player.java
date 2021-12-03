@@ -70,5 +70,10 @@ public class Player {
         PlayerInitialPositionY = y;
     }
     //implement collision detection with map walls
-    
+    public float getX() {
+        return characterRec.getX();
+    }
+    public float getY() {
+        return characterRec.getY();
+    }
 }
