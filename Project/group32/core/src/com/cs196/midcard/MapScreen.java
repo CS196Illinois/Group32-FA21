@@ -1,15 +1,19 @@
 package com.cs196.midcard;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MapScreen implements Screen {
 
+    private Game game;
+    private Stage stage;
     private Map map;
     private Player player;
 
@@ -22,7 +26,8 @@ public class MapScreen implements Screen {
     private static final int WORLD_WIDTH = 1920;
     private static final int WORLD_HEIGHT = 1080;
 
-    public MapScreen() {
+    public MapScreen(Game aGame) {
+        game = aGame;
         camera = new OrthographicCamera();
         viewport = new StretchViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
         batch = new SpriteBatch();

@@ -22,8 +22,8 @@ public class Player {
     public static final int PlayerHeight = 100;
     public static final int PlayerWidth = 100;
     //define the Constant for the player's position
-    public static int PlayerInitialPositionX = -PlayerHeight/2;
-    public static int PlayerInitialPositionY = -PlayerWidth/2;
+    public static int PlayerInitialPositionX = 400;
+    public static int PlayerInitialPositionY = -500;
 
     private Texture character;
     private Rectangle characterRec = new Rectangle();

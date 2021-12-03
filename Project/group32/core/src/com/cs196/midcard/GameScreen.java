@@ -1,5 +1,6 @@
 package com.cs196.midcard;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -9,7 +10,8 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class GameScreen implements Screen {
-    
+
+    private Game game;
     private Map map;
     private Player player;
 
@@ -28,7 +30,8 @@ public class GameScreen implements Screen {
     private static final int WORLD_WIDTH = 1920;
     private static final int WORLD_HEIGHT = 1080;
 
-    public GameScreen() {
+    public GameScreen(Game aGame) {
+        game = aGame;
         camera = new OrthographicCamera();
         viewport = new StretchViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
         batch = new SpriteBatch();
