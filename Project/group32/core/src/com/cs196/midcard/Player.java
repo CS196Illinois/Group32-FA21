@@ -14,8 +14,8 @@ import com.badlogic.gdx.Input.Keys;
 public class Player {
 
     //define the ScreenWidth and ScreenHeight
-    public static final int ScreenWidth = 300;
-    public static final int ScreenHeight = 300;
+    public static final int ScreenWidth = (int) (1920.0 / 2.0);
+    public static final int ScreenHeight = (int) (1080.0 / 2.0);
     //define the Constant for the player's speed
     public static final int PlayerSpeed = 5;
     //define the Constant for the player's size
@@ -69,5 +69,6 @@ public class Player {
         PlayerInitialPositionX = x;
         PlayerInitialPositionY = y;
     }
-
+    //implement collision detection with map walls
+    
 }

@@ -21,9 +21,9 @@ public class Entity {
         m5 = new Move(0, "Punch", 20, "Throws a strong punch in the face.");
         m6 = new Move(3, "Seed Bullet", 25, "Shoots a bullet of seeds.");
 
-        c1 = new Card("Flame Hedgehog", m1, m2);
-        c2 = new Card("Water Elf", m3, m4);
-        c3 = new Card("Mushroom Mon", m5, m6);
+        //c1 = new Card("Flame Hedgehog", m1, m2);
+        //c2 = new Card("Water Elf", m3, m4);
+        //c3 = new Card("Mushroom Mon", m5, m6);
     }
 
     public void setEnemy() {
@@ -34,9 +34,9 @@ public class Entity {
         bm5 = new Move(0, "Tackle", 20, "Run against the foe in its full speed.");
         bm6 = new Move(1, "Ember", 30, "Spits out small pieces of flames.");
 
-        bc1 = new Card("Salamander", bm1, bm2);
-        bc2 = new Card("Efreet", bm3, bm4);
-        bc3 = new Card("Flame Slimes", bm5, bm6);
+        //bc1 = new Card("Salamander", bm1, bm2);
+        //bc2 = new Card("Efreet", bm3, bm4);
+        //bc3 = new Card("Flame Slimes", bm5, bm6);
     }
 
     public Move getM1() {
