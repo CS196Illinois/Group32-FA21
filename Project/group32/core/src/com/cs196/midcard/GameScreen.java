@@ -25,13 +25,8 @@ public class GameScreen implements Screen {
     private Card cardOne;
     private Card cardTwo;
     
-<<<<<<< HEAD
     private static final int WORLD_WIDTH = 1920;
     private static final int WORLD_HEIGHT = 1080;
-=======
-    private static final int WORLD_WIDTH = 1000;
-    private static final int WORLD_HEIGHT = 600;
->>>>>>> 908b69e9423cc201af28812eebab3feefd303f1d
 
     public GameScreen() {
         camera = new OrthographicCamera();
