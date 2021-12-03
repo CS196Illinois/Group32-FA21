@@ -29,7 +29,7 @@ public class MidCard extends Game {
 	@Override
 	public void render () {
 		gameScreen.render(Gdx.graphics.getDeltaTime());
-		//gameScreen.render(Gdx.graphics.getDeltaTime());
+		//mapScreen.render(Gdx.graphics.getDeltaTime());
 		introMusic.play();
 		introMusic.setLooping(true);
 	}
@@ -37,11 +37,9 @@ public class MidCard extends Game {
 	@Override
 	public void dispose () {
 		gameScreen.dispose();
-		// gameScreen.dispose();
+		mapScreen.dispose();
 	}
 	@Override
 	public void resize(int width, int height) {
-		gameScreen.resize(width, height);
-		// gameScreen.resize(width, height);
 	}
 }

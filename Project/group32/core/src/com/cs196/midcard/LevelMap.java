@@ -28,8 +28,8 @@ public class LevelMap extends ApplicationAdapter {
     @Override
     public void create() {
         // load level map
-        // levelMap = new Texture(Gdx.files.internal("Level Map.jpg"));
-        // map = new Map("LevelMap");
+        levelMap = new Texture(Gdx.files.internal("Level Map.jpg"));
+        map = new Map("LevelMap");
         //  <- USE FOR render() !!!!!!!
 
         // load character
