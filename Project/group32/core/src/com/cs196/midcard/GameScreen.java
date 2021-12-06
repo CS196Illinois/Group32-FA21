@@ -23,12 +23,16 @@ public class GameScreen implements Screen {
     private SpriteBatch batch;
 
     private Texture characterTexture;
+    private Texture enemyTexture;
     private Texture cardOneTexture;
     private Texture cardTwoTexture;
-    private Texture enemyTexture;
+    private Texture cardThreeTexture;
+    private Texture cardFourTexture;
 
     private Card cardOne;
     private Card cardTwo;
+    private Card cardThree;
+    private Card cardFour;
     
     private static final int WORLD_WIDTH = 1920;
     private static final int WORLD_HEIGHT = 1080;
@@ -45,8 +49,12 @@ public class GameScreen implements Screen {
         player = new Player(characterTexture, -50, -350, 100, 100);
         cardOneTexture = new Texture("Fire 1.jpg");
         cardTwoTexture = new Texture("Fire 2.jpg");
+        cardThreeTexture = new Texture("Water_1.jpg");
+        cardFourTexture = new Texture("Water_2.jpg");
         cardOne = new Card("fire1", cardOneTexture, 300, -500);
         cardTwo = new Card("fire2", cardTwoTexture, 450, -500);
+        cardThree = new Card("water1", cardThreeTexture, 600, -500);
+        cardFour = new Card("water2", cardFourTexture, 750, -500);
     }
     
     @Override
@@ -55,11 +63,13 @@ public class GameScreen implements Screen {
         camera.translate((WORLD_WIDTH), (WORLD_HEIGHT), 0);
         map.renderBackground(batch, WORLD_WIDTH, WORLD_HEIGHT);
         player.draw(batch);
-        enemy.draw(batch);
         player.detectInput();
         player.checkInMap();
+        enemy.draw(batch);
         cardOne.draw(batch);
         cardTwo.draw(batch);
+        cardThree.draw(batch);
+        cardFour.draw(batch);
         batch.end();
     }
     @Override
