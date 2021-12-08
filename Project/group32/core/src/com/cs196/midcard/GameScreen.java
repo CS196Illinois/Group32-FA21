@@ -63,10 +63,10 @@ public class GameScreen implements Screen {
         cardTwoTexture = new Texture("Fire 2.jpg");
         cardThreeTexture = new Texture("Water_1.jpg");
         cardFourTexture = new Texture("Water_2.jpg");
-        cardOne = new Card("fire1", cardOneTexture, 300, -500);
-        cardTwo = new Card("fire2", cardTwoTexture, 450, -500);
-        cardThree = new Card("water1", cardThreeTexture, 600, -500);
-        cardFour = new Card("water2", cardFourTexture, 750, -500);
+        cardOne = new Card("fire1", cardOneTexture, 300, -500, 45, 105);
+        cardTwo = new Card("fire2", cardTwoTexture, 450, -500, 30, 95);
+        cardThree = new Card("water1", cardThreeTexture, 600, -500, 45, 100);
+        cardFour = new Card("water2", cardFourTexture, 750, -500, 50, 150);
         boss = new Entity(500, 2);
         user = new Entity(200, 1);
         battle = new Battle();

@@ -2,7 +2,6 @@ package com.cs196.midcard;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.awt.*;
@@ -10,6 +9,7 @@ import java.awt.*;
 public class Card {
 
     private Move m1, m2;
+    private int basic, elemental;
     private String name;
     private int prevMoveUsed;
     private int moveUsed;
@@ -19,10 +19,12 @@ public class Card {
     private Entity boss;
     private Battle battle;
 
-    public Card(String name, Texture card, int xPos, int yPos) {
+    public Card(String name, Texture card, int xPos, int yPos, int basic, int elemental) {
         this.name = name;
         //this.m1 = m1;
         //this.m2 = m2;
+        this.basic = basic;
+        this.elemental = elemental;
         this.card = card;
         cardRec.x = xPos;
         cardRec.y = yPos;
@@ -38,12 +40,12 @@ public class Card {
         return name;
     }
 
-    public Move getMove1() {
-        return m1;
+    public int getBasic() {
+        return basic;
     }
 
-    public Move getMove2() {
-        return m2;
+    public int getElemental() {
+        return elemental;
     }
 
     public void setMoveUsed(int moveUsed) {
