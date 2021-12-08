@@ -23,6 +23,8 @@ public class GameScreen implements Screen {
     private Camera camera;
     private Viewport viewport;
 
+    private Battle battle;
+
     private SpriteBatch batch;
 
     private Texture characterTexture;
@@ -67,6 +69,7 @@ public class GameScreen implements Screen {
         cardFour = new Card("water2", cardFourTexture, 750, -500);
         boss = new Entity(500, 2);
         user = new Entity(200, 1);
+        battle = new Battle();
     }
     
     @Override
@@ -79,9 +82,7 @@ public class GameScreen implements Screen {
         player.checkInMap();
         enemy.draw(batch);
 
-        if (Gdx.input.getX() > 300 && Gdx.input.getX() < 400) {
-            System.out.println("Did it work?");
-        }
+        battle.detectInput(1);
 
         cardOne.draw(batch);
         cardTwo.draw(batch);

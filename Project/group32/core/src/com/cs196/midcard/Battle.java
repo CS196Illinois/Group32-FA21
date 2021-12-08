@@ -1,9 +1,15 @@
 package com.cs196.midcard;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputProcessor;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Battle {
+import static com.badlogic.gdx.Gdx.input;
+
+public class Battle implements InputProcessor {
 
     private Entity entity;
     private Entity boss;
@@ -49,6 +55,22 @@ public class Battle {
             return false;
         } else {
             return true;
+        }
+    }
+
+    public void detectInput(int cardNumber) {
+        if (input.isButtonPressed(Input.Buttons.LEFT)) {
+            if (cardNumber == 1) {
+
+            } else if (cardNumber == 2) {
+
+            } else if (cardNumber == 3) {
+
+            } else if (cardNumber == 4) {
+
+            } else {
+                throw new IllegalArgumentException();
+            }
         }
     }
 
@@ -131,4 +153,5 @@ public class Battle {
 
         }
     }
+
 }

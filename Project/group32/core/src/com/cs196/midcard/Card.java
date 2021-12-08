@@ -1,5 +1,6 @@
 package com.cs196.midcard;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -14,6 +15,9 @@ public class Card {
     private int moveUsed;
     private Texture card;
     private Rectangle cardRec = new Rectangle();
+    private Entity player;
+    private Entity boss;
+    private Battle battle;
 
     public Card(String name, Texture card, int xPos, int yPos) {
         this.name = name;
@@ -49,4 +53,6 @@ public class Card {
     public void setPrevMoveUsed(int prevMoveUsed) {
         this.prevMoveUsed = prevMoveUsed;
     }
+
+
 }
