@@ -1,8 +1,8 @@
 package com.cs196.midcard;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import org.w3c.dom.Text;
 
 import java.awt.*;
 
