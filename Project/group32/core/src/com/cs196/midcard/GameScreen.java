@@ -89,7 +89,7 @@ public class GameScreen implements Screen {
         cardFour.draw(batch);
 
         font.getData().setScale(5, 5);
-        font.draw(batch, "Enemy HP : " + boss.getHp(), -1000, 500);
+        font.draw(batch, "Enemy HP : " + boss.getHp(), -900, 500);
         font.draw(batch, "Player HP : " + user.getHp(), 300, 500);
 
         batch.end();
