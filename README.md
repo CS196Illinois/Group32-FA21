@@ -1,5 +1,5 @@
 # Group 32
-Group Name: 32
+Group Name: Journey to Midcard
 
 [MVP Link](https://docs.google.com/document/d/1FipdEs-6lUsYDcKg-5tjHsYU8X9CRYc8fJ-kS3lP_VQ/edit?usp=sharing)
 
