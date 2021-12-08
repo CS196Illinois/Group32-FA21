@@ -62,7 +62,7 @@ public class GameScreen implements Screen {
         enemy = new Player(enemyTexture, -800, -300, 500, 500);
         player = new Player(characterTexture, -50, -350, 100, 100);
         fire1Texture = new Texture("Visual Effects/alt fire.png");
-        fire1 = new Player(fire1Texture, 0, 0, 150, 150);
+        fire1 = new Player(fire1Texture, 0, -150, 150, 150);
         cardOneTexture = new Texture("Fire 1.jpg");
         cardTwoTexture = new Texture("Fire 2.jpg");
         cardThreeTexture = new Texture("Water_1.jpg");
