@@ -8,8 +8,10 @@ public class Map {
 	private Texture backgroundMap;
 
 	public Map(String mapName) {
-		if (mapName.equals("LevelMap") || mapName.equals(("gameOver"))) {
+		if (mapName.equals("LevelMap")) {
 			backgroundMap = new Texture(Gdx.files.internal(mapName + ".jpg"));
+		} else if (mapName.equals("gameOver")) {
+			backgroundMap = new Texture(Gdx.files.internal(mapName + ".jpeg"));
 		} else {
 			backgroundMap = new Texture(Gdx.files.internal(mapName + "/" + "Bright" + "/" + mapName + ".png"));
 		}
