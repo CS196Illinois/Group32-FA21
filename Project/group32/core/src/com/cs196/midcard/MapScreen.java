@@ -46,6 +46,7 @@ public class MapScreen implements Screen {
         if (player.getY() == -400) {
             game.setScreen(new GameScreen(game));
         }
+        // Transition for 8 levels
         batch.end();
     }
     @Override
