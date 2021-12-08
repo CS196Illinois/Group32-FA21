@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import static com.badlogic.gdx.Gdx.input;
 
-public class Battle implements InputProcessor {
+public class Battle {
 
     private Entity entity;
     private Entity boss;
@@ -59,19 +59,9 @@ public class Battle implements InputProcessor {
     }
 
     public void detectInput(int cardNumber) {
-        if (input.isButtonPressed(Input.Buttons.LEFT)) {
-            if (cardNumber == 1) {
+        if (input.isButtonPressed(Input.Buttons.LEFT) && input.getX() >= 1260 && input.getX() <= 1395 && input.getX() >= 942) {
 
-            } else if (cardNumber == 2) {
-
-            } else if (cardNumber == 3) {
-
-            } else if (cardNumber == 4) {
-
-            } else {
-                throw new IllegalArgumentException();
-            }
-        }
+        };
     }
 
     public void play() {
