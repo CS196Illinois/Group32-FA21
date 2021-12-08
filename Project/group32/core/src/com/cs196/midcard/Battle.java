@@ -17,6 +17,7 @@ public class Battle {
     private Entity boss;
     private Game game;
     private Map gameOver;
+    private boolean card1Clicked;
 
     public Battle() {
         entity = new Entity(400, 0);
@@ -67,8 +68,12 @@ public class Battle {
 
     public void detectInput(int cardNumber) {
         if (input.isButtonPressed(Input.Buttons.LEFT) && input.getX() >= 1260 && input.getX() <= 1395 && input.getX() >= 942) {
-            boss.setHp(boss.getHp() - 45);
-        }
+            card1Clicked = true;
+        };
+    }
+
+    public boolean isClicked() {
+        return card1Clicked;
     }
 
     public void play() {

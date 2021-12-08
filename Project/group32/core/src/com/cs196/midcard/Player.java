@@ -27,7 +27,7 @@ public class Player {
 
     private Texture character;
     private Rectangle characterRec = new Rectangle();
-    
+
     public Player(Texture character, int one, int two, int playerWidth, int playerHeight) {
         this.character = character;
         characterRec.x = one;
@@ -47,11 +47,13 @@ public class Player {
             characterRec.y -= PlayerSpeed;
         }
     }
+
     public void draw(SpriteBatch batch) {
         batch.draw(character, characterRec.x, characterRec.y,
-        characterRec.width, characterRec.height);
+                characterRec.width, characterRec.height);
     }
-    public void checkInMap() { 
+
+    public void checkInMap() {
         // check in x axis
         if (characterRec.x > ScreenWidth - PlayerWidth) {
             characterRec.x = ScreenWidth - PlayerWidth;
@@ -65,15 +67,22 @@ public class Player {
             characterRec.y = -ScreenHeight;
         }
     }
+
     public void setPlayerInitialPosition(int x, int y) {
         PlayerInitialPositionX = x;
         PlayerInitialPositionY = y;
     }
+
     //implement collision detection with map walls
     public float getX() {
         return characterRec.getX();
     }
+
     public float getY() {
         return characterRec.getY();
+    }
+
+    public void setMove() {
+        characterRec.x -= 5;
     }
 }
