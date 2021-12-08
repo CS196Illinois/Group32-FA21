@@ -67,8 +67,8 @@ public class Battle {
 
     public void detectInput(int cardNumber) {
         if (input.isButtonPressed(Input.Buttons.LEFT) && input.getX() >= 1260 && input.getX() <= 1395 && input.getX() >= 942) {
-
-        };
+            boss.setHp(boss.getHp() - 45);
+        }
     }
 
     public void play() {
