@@ -19,6 +19,7 @@ public class GameScreen implements Screen {
     private Map map;
     private Player player;
     private Player enemy;
+    private Player fire1;
 
     private Camera camera;
     private Viewport viewport;
@@ -33,6 +34,7 @@ public class GameScreen implements Screen {
     private Texture cardTwoTexture;
     private Texture cardThreeTexture;
     private Texture cardFourTexture;
+    private Texture fire1Texture;
 
     private Card cardOne;
     private Card cardTwo;
@@ -59,6 +61,8 @@ public class GameScreen implements Screen {
         enemyTexture = new Texture("Enemy/1.png");
         enemy = new Player(enemyTexture, -800, -300, 500, 500);
         player = new Player(characterTexture, -50, -350, 100, 100);
+        fire1Texture = new Texture("Visual Effects/alt fire.png");
+        fire1 = new Player(fire1Texture, 0, 0, 150, 150);
         cardOneTexture = new Texture("Fire 1.jpg");
         cardTwoTexture = new Texture("Fire 2.jpg");
         cardThreeTexture = new Texture("Water_1.jpg");
@@ -81,17 +85,16 @@ public class GameScreen implements Screen {
         player.detectInput();
         player.checkInMap();
         enemy.draw(batch);
-
         battle.detectInput(1);
         if (battle.isClicked() == true) {
-
+            fire1.draw(batch);
+            fire1.setMove();
         }
 
         cardOne.draw(batch);
         cardTwo.draw(batch);
         cardThree.draw(batch);
         cardFour.draw(batch);
-
         font.getData().setScale(5, 5);
         font.draw(batch, "Enemy HP : " + boss.getHp(), -900, 500);
         font.draw(batch, "Player HP : " + user.getHp(), 400, 500);
