@@ -1,10 +1,13 @@
 package com.cs196.midcard;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -33,6 +36,13 @@ public class GameScreen implements Screen {
     private Card cardTwo;
     private Card cardThree;
     private Card cardFour;
+
+    private Entity boss;
+    private Entity user;
+
+    private Music battleMusic;
+
+    BitmapFont font = new BitmapFont();
     
     private static final int WORLD_WIDTH = 1920;
     private static final int WORLD_HEIGHT = 1080;
@@ -55,6 +65,8 @@ public class GameScreen implements Screen {
         cardTwo = new Card("fire2", cardTwoTexture, 450, -500);
         cardThree = new Card("water1", cardThreeTexture, 600, -500);
         cardFour = new Card("water2", cardFourTexture, 750, -500);
+        boss = new Entity(500, 2);
+        user = new Entity(200, 1);
     }
     
     @Override
@@ -66,10 +78,20 @@ public class GameScreen implements Screen {
         player.detectInput();
         player.checkInMap();
         enemy.draw(batch);
+
+        if (Gdx.input.getX() > 300 && Gdx.input.getX() < 400) {
+            System.out.println("Did it work?");
+        }
+
         cardOne.draw(batch);
         cardTwo.draw(batch);
         cardThree.draw(batch);
         cardFour.draw(batch);
+
+        font.getData().setScale(5, 5);
+        font.draw(batch, "Enemy HP : " + boss.getHp(), -300, 500);
+        font.draw(batch, "Player HP : " + user.getHp(), 300, 500);
+
         batch.end();
     }
     @Override
