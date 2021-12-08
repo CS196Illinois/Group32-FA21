@@ -44,6 +44,12 @@ public class GameScreen implements Screen {
     private Entity boss;
     private Entity user;
 
+    private int bossHp;
+    private int playerHp;
+
+    private String bossHpString = String.valueOf(bossHp);
+    private String playerHpString = String.valueOf(playerHp);
+
     private Music battleMusic;
 
     BitmapFont font = new BitmapFont();
@@ -67,8 +73,8 @@ public class GameScreen implements Screen {
         cardTwoTexture = new Texture("Fire 2.jpg");
         cardThreeTexture = new Texture("Water_1.jpg");
         cardFourTexture = new Texture("Water_2.jpg");
-        cardOne = new Card("fire1", cardOneTexture, 300, -500, 45, 105);
-        cardTwo = new Card("fire2", cardTwoTexture, 450, -500, 30, 95);
+        cardOne = new Card("fire1", cardTwoTexture, 300, -500, 45, 105);
+        cardTwo = new Card("fire2", cardOneTexture, 450, -500, 30, 95);
         cardThree = new Card("water1", cardThreeTexture, 600, -500, 45, 100);
         cardFour = new Card("water2", cardFourTexture, 750, -500, 50, 150);
         boss = new Entity(500, 2);
@@ -85,7 +91,7 @@ public class GameScreen implements Screen {
         player.detectInput();
         player.checkInMap();
         enemy.draw(batch);
-        battle.detectInput(1);
+        battle.detectInput();
         if (battle.isClicked() == true) {
             fire1.draw(batch);
             fire1.setMove();
@@ -96,8 +102,12 @@ public class GameScreen implements Screen {
         cardThree.draw(batch);
         cardFour.draw(batch);
         font.getData().setScale(5, 5);
-        font.draw(batch, "Enemy HP : " + boss.getHp(), -900, 500);
-        font.draw(batch, "Player HP : " + user.getHp(), 400, 500);
+        font.draw(batch, "Enemy HP: " + boss.getHp(), -900, 500);
+        font.draw(batch, "Player HP: " + user.getHp(), 400, 500);
+
+        if (battle.detectInput() == 1) {
+            boss.setHp(boss.getHp() - 15);
+        }
 
         batch.end();
     }

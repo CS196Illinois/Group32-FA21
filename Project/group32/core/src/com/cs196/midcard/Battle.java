@@ -66,11 +66,12 @@ public class Battle {
         }
     }
 
-    public void detectInput(int cardNumber) {
+    public int detectInput() {
         if (input.isButtonPressed(Input.Buttons.LEFT) && input.getX() >= 1260 && input.getX() <= 1395 && input.getX() >= 942) {
             card1Clicked = true;
-            //boss.setHp(boss.getHp() - 45);
+            return 1;
         };
+        return 0;
     }
 
     public boolean isClicked() {
