@@ -6,6 +6,8 @@ import com.badlogic.gdx.InputProcessor;
 
 import java.util.Random;
 import java.util.Scanner;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.Texture;
 
 import static com.badlogic.gdx.Gdx.input;
 
@@ -13,10 +15,13 @@ public class Battle {
 
     private Entity entity;
     private Entity boss;
+    private Game game;
+    private Map gameOver;
 
     public Battle() {
         entity = new Entity(400, 0);
         boss = new Entity(40, 1);
+        gameOver = new Map("gameOver");
     }
 
     public Entity getEntity() {
@@ -49,9 +54,11 @@ public class Battle {
     public boolean gameOver() {
         if (entity.getHp() <= 0) {
             System.out.println("Game Over");
+            game.setScreen(new GameOverScreen());
             return false;
         } else if (boss.getHp() <= 0) {
             System.out.println("You won");
+            game.setScreen(new MapScreen(game));
             return false;
         } else {
             return true;

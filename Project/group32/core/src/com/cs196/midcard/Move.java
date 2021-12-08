@@ -3,10 +3,6 @@ package com.cs196.midcard;
 public class Move {
 
     public String name;
-    /*
-    Normal moves = 0
-    Heal moves = 1
-     */
     public int type;
 
     public float minDamage;
