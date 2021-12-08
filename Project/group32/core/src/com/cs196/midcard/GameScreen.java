@@ -83,6 +83,9 @@ public class GameScreen implements Screen {
         enemy.draw(batch);
 
         battle.detectInput(1);
+        if (battle.isClicked() == true) {
+
+        }
 
         cardOne.draw(batch);
         cardTwo.draw(batch);
